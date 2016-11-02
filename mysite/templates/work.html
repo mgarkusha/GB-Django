@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Труд делает из обезьяны человека
+{% endblock %}
+{% block content %}
+<div class="jumbotron">
+    <h1>Немного о работе</h1>
+    <p class="lead">Поговорим о жизненном опыте.</p>
+    <img src="{% static '/images/panda-work.jpg' %}" class="img-circle">
+</div>
+
+<div class="row marketing">
+    <p>Данные предоставлены в хронологическом порядке без указания дат.</p>
+    <ul class="list-group">
+        {% for work in workplaces %}
+        <li class="list-group-item">{{ work.name }} : {{ work.prof }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

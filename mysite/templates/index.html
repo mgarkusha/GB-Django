@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+Немного обо мне
+{% endblock %}
+{% block content %}
+<div class="jumbotron">
+    <h1>Немного обо мне</h1>
+    <p class="lead">Рад Вас приветствовать на моём первом сайте работающем на фреймворке Django.</p>
+    <img src="{% static '/images/panda.gif' %}" class="img-rounded">
+</div>
+
+<div class="row marketing">
+    <div class="col-lg-6">
+        {% for i in aboutme %}
+        <h4>{{ i.name }}</h4>
+        <p>{{ i.value }}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

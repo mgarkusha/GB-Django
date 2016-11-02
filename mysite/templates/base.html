@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        title
+        {% endblock %}
+    </title>{% block css%}
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static '/css/jumbotron-narrow.css' %}">
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    {% block menu %}
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li><a href="/">About me</a></li>
+            <li><a href="/education">Учёба</a></li>
+            <li><a href="/work">Работа</a></li>
+        </ul>
+        <h3 class="text-muted">Django Education</h3>
+    </div>
+    {% endblock %}
+    {% block content %}
+    <p>some content</p>
+    {% endblock %}
+    {% block footer %}
+    <div class="footer">
+        <p>&copy; Супер гуд! 2016</p>
+    </div>
+    {% endblock %}
+
+</div>
+</body>
+</html>
