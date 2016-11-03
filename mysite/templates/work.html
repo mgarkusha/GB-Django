@@ -8,18 +8,22 @@
     <p class="lead">Поговорим о жизненном опыте.</p>
     <!--<img src="{% static '/images/panda-work.jpg' %}" class="img-circle">-->
 </div>
-
 <div class="row marketing">
-    <p>Данные предоставлены в хронологическом порядке без указания дат.</p>
-    <ul class="list-group">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                 <th>Организация</th>
+                 <th>Регион</th>
+                <th>Должность</th>
+            </tr>
+        </thead>
         {% for work in workplaces %}
-        <li class="list-group-item">{{ work.name }} : {{ work.prof }}</li>
+        <tr>
+            <td>{{ work.organization }}</td>
+            <td>{{ work.region }}</td>
+            <td>{{ work.position }}</td>
+        </tr>
         {% endfor %}
-    </ul>
-    <ul class="list-group">
-        {% for work in workplaces_bd %}
-        <li class="list-group-item">{{ work.organization }} : {{ work.region }}</li>
-        {% endfor %}
-    </ul>
+    </table>
 </div>
 {% endblock %}

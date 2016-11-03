@@ -10,11 +10,21 @@
 </div>
 
 <div class="row marketing">
-    <div class="col-lg-6">
-        {% for i in edu %}
-        <h4>{{ i.name }}</h4>
-        <p>{{ i.value }}</p>
+        <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                 <th>Наименование учреждения</th>
+                 <th>Период учёбы</th>
+                <th>Учёная степень</th>
+            </tr>
+        </thead>
+        {% for edu in edu %}
+        <tr>
+            <td>{{ edu.organization }}</td>
+            <td>{{ edu.learn_time }}</td>
+            <td>{{ edu.profession }}</td>
+        </tr>
         {% endfor %}
-    </div>
+    </table>
 </div>
 {% endblock %}

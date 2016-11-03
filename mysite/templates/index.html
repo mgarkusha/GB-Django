@@ -9,13 +9,26 @@
     <p class="lead">Рад Вас приветствовать на моём первом сайте работающем на фреймворке Django.</p>
     <!--<img src="{% static '/images/panda.gif' %}" class="img-rounded">-->
 </div>
-
 <div class="row marketing">
-    <div class="col-lg-6">
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>Дата рождения</th>
+            <th>Специальность</th>
+            <th>Место рождения</th>
+            <th>Хобби</th>
+        </tr>
+        </thead>
         {% for i in aboutme %}
-        <h4>{{ i.name }}</h4>
-        <p>{{ i.value }}</p>
+        <tr>
+            <td>{{ i.fio }}</td>
+            <td>{{ i.birthday }}</td>
+            <td>{{ i.profession }}</td>
+            <td>{{ i.born_place }}</td>
+            <td>{{ i.hobby }}</td>
+        </tr>
         {% endfor %}
-    </div>
+    </table>
 </div>
 {% endblock %}
