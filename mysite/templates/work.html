@@ -6,7 +6,7 @@
 <div class="jumbotron">
     <h1>Немного о работе</h1>
     <p class="lead">Поговорим о жизненном опыте.</p>
-    <img src="{% static '/images/panda-work.jpg' %}" class="img-circle">
+    <!--<img src="{% static '/images/panda-work.jpg' %}" class="img-circle">-->
 </div>
 
 <div class="row marketing">
@@ -14,6 +14,11 @@
     <ul class="list-group">
         {% for work in workplaces %}
         <li class="list-group-item">{{ work.name }} : {{ work.prof }}</li>
+        {% endfor %}
+    </ul>
+    <ul class="list-group">
+        {% for work in workplaces_bd %}
+        <li class="list-group-item">{{ work.organization }} : {{ work.region }}</li>
         {% endfor %}
     </ul>
 </div>

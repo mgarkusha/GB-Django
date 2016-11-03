@@ -1,4 +1,5 @@
 from django.shortcuts import render_to_response
+from .models import Work
 import datetime
 
 
@@ -29,4 +30,5 @@ def work(request):
                   {'name': 'Курьерская компания', 'prof': 'системный админ'},
                   {'name': 'Завод', 'prof': 'системный админ'},
                   {'name': 'Таксомоторная компания', 'prof': 'системный админ'}]
-    return render_to_response('work.html', {'workplaces': workplaces})
+    workplaces_bd = Work.objects.all()
+    return render_to_response('work.html', {'workplaces': workplaces, 'workplaces_bd': workplaces_bd})
