@@ -18,3 +18,14 @@ class About(models.Model):
     profession = models.CharField(verbose_name='Специальность', max_length=32)
     born_place = models.CharField(verbose_name='Место рождения', max_length=32)
     hobby = models.CharField(verbose_name='Хобби', max_length=32)
+
+class Contract(models.Model):
+    id = models.CharField(verbose_name='id')
+    contract_number = models.CharField(verbose_name='Дата договора', max_length=32)
+    contract_date = models.parse_date()
+    ooo_name = models.CharField(verbose_name='Контрагент', max_length=64)
+    contract_status = models.Variance
+    ooo_address
+    ooo_e_mail
+    month1
+    month2

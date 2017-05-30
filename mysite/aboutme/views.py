@@ -2,6 +2,7 @@ from django.shortcuts import render_to_response
 from .models import Work
 from .models import Education
 from .models import About
+from .models import Contract
 import datetime
 
 
@@ -19,3 +20,7 @@ def education(request):
 def work(request):
     workplaces = Work.objects.all()
     return render_to_response('work.html', {'workplaces': workplaces})
+
+def contract(request):
+    contract = Contract.objects.all()
+    return render_to_response('contract.html', {'contract': contract})

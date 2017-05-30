@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Договора ООО "Скай Авто"
+{% endblock %}
+{% block content %}
+<div class="jumbotron">
+    <h1>Таблицаа договоров ООО "Скай Авто"</h1>
+    <p class="lead">Тестовый вариант. Пока без возможности редактирования</p>
+</div>
+
+<div class="row marketing">
+        <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>№№</th>
+                <th>№ Договора</th>
+                <th>Дата договора</th>
+                <th>Контрагент</th>
+                <th>Статус договора</th>
+                <th>Физический адрес</th>
+                <th>@</th>
+                <th>Месяц 1</th>
+                <th>Месяц 2</th>
+            </tr>
+        </thead>
+        {% for edu in edu %}
+        <tr>
+            <td>{{ contract.id }}</td>
+            <td>{{ contract.contract_number }}</td>
+            <td>{{ contract.contract_date }}</td>
+            <td>{{ contract.ooo_name }}</td>
+            <td>{{ contract.contract_status }}</td>
+            <td>{{ contract.ooo_address }}</td>
+            <td>{{ contract.ooo_e_mail }}</td>
+            <td>{{ contract.month1 }}</td>
+            <td>{{ contract.month2 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
