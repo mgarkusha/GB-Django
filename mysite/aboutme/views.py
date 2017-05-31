@@ -21,6 +21,7 @@ def work(request):
     workplaces = Work.objects.all()
     return render_to_response('work.html', {'workplaces': workplaces})
 
+
 def contract(request):
-    contract = Contract.objects.all()
-    return render_to_response('contract.html', {'contract': contract})
+    contracts = Contract.objects.all()
+    return render_to_response('contract.html', {'contracts': contracts})
